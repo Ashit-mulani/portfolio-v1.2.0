@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.smooth {
+  transition: all 0.25s ease-in;
+}
+
+@utility font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+@utility font-lexend {
+   font-family: 'Lexend', sans-serif;
+}
+
+@utility font-dmsans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+@utility font-bowlby {
+  font-family: 'Bowlby One SC', system-ui;
+}
+
+@utility font-archivo {
+  font-family: 'Archivo Black', sans-serif;
+}

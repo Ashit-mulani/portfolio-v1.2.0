@@ -1,0 +1,9 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
+<button
+  class={`${className} smooth cursor-pointer px-4 py-2 text-sm rounded-full flex items-center justify-center bg-neutral-500/20 text-neutral-500`}
+>
+  <slot />
+</button>

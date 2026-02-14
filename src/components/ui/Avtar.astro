@@ -1,0 +1,30 @@
+---
+const {
+  src = "",
+  alt = "Avatar",
+  fallback = "/fallback-image.png",
+  class: className = "",
+  size = 24,
+  rounded = true,
+  ...rest
+} = Astro.props;
+
+const finalSrc = src || fallback;
+
+const baseClasses =
+  "object-cover inline-block bg-neutral-500/10 aspect-square ";
+
+const roundedClass = rounded ? "rounded-full" : "";
+
+const sizeStyle = `width: ${size}px; height: ${size}px;`;
+---
+
+<img
+  src={finalSrc}
+  alt={alt}
+  loading="lazy"
+  decoding="async"
+  class={`${baseClasses} ${roundedClass} ${className}`}
+  style={sizeStyle}
+  {...rest}
+/>

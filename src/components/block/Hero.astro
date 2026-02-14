@@ -1,0 +1,358 @@
+---
+import { route, socialLinks } from "../../const/route-const";
+import {
+  contactInfo,
+  gmailComposeLink,
+  outlookLink,
+  notionLink,
+  locationLink,
+} from "../../const/contact-info-const";
+import Button from "../ui/Button.astro";
+import HoverLink from "../ui/HoverLink.astro";
+import IconButton from "../ui/IconButton.astro";
+import MyAvtar from "../ui/MyAvtar.astro";
+import IconButtonWithText from "../ui/IconButtonWithText.astro";
+import InfoCard from "../ui/InfoCard.astro";
+---
+
+<header class="flex flex-col gap-8">
+  <div class="flex flex-col gap-6">
+    <div>
+      <h1 class="text-2xl sm:text-4xl font-lexend font-bold text-neutral-700">
+        Full-Stack Developer Building Scalable Web Apps
+      </h1>
+    </div>
+    <div class="flex items-center gap-x-2 font-inter flex-wrap">
+      <div class="flex items-center gap-2">
+        <MyAvtar />
+        <HoverLink
+          src={route.about}
+          text="Ashit Mulani - AJ"
+          class="font-medium underline"
+        >
+          <div class="flex flex-col gap-4">
+            <div class="flex w-full items-center justify-between">
+              <MyAvtar size={40} />
+              <a href={route.about}> <Button> About Me </Button></a>
+            </div>
+            <p class="text-sm text-neutral-700">
+              Full-Stack Web Developer building scalable, production-ready web
+              applications with modern technologies. Solid understanding in
+              system design, performance optimization, and high-quality
+              solutions.
+            </p>
+          </div>
+        </HoverLink>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-sm text-neutral-500 flex items-center gap-1"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-dot-icon lucide-dot"
+            ><circle cx="12.1" cy="12.1" r="1"></circle>
+          </svg>
+          5 minutes read
+        </span>
+        <IconButton class="hover:text-red-500">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-heart-plus-icon lucide-heart-plus"
+            ><path
+              d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"
+            ></path><path d="M15 15h6"></path><path d="M18 12v6"></path></svg
+          >
+        </IconButton>
+      </div>
+    </div>
+    <div
+      class="flex flex-wrap items-center justify-between border-y gap-x-4 -space-y-2 border-neutral-500/8 py-1"
+    >
+      <div class="flex items-center gap-1">
+        <a
+          title="Fluoce.com | Founder | Ashit-mulani"
+          href={socialLinks.fluoce}
+          target="_blank"
+        >
+          <IconButton class="hover:text-blue-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-square-icon lucide-square"
+              ><rect width="18" height="18" x="3" y="3" rx="2"></rect></svg
+            >
+            <span class="hidden sm:inline">Fluoce</span>
+          </IconButton>
+        </a>
+        <a
+          title="Github.com | Profile | Ashit-mulani"
+          href={socialLinks.github}
+          target="_blank"
+        >
+          <IconButton class="hover:text-blue-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github-icon lucide-github"
+              ><path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+            >
+            <span class="hidden sm:inline">GitHub</span>
+          </IconButton>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 text-neutral-500">
+        <HoverLink text={`${contactInfo.email}`} class="text-md">
+          <div class="flex flex-col gap-2">
+            <span class="text-sm text-neutral-500">Send mail</span>
+            <div class="flex
+            flex-col
+            gap-2">
+              <a href={gmailComposeLink} target="_blank">
+                <IconButtonWithText
+                  class="hover:bg-neutral-500/5 w-full justify-start rounded"
+                >
+                  <img src="/gmail.svg" alt="gmail" class="size-6" />
+                  <span>Google Mail</span>
+                </IconButtonWithText>
+              </a>
+              <a href={outlookLink} target="_blank">
+                <IconButtonWithText
+                  class="hover:bg-neutral-500/5 w-full justify-start rounded"
+                >
+                  <img src="/outlook.svg" alt="gmail" class="size-6" />
+                  <span>Outlook Mail</span>
+                </IconButtonWithText>
+              </a>
+              <a href={notionLink} target="_blank">
+                <IconButtonWithText
+                  class="hover:bg-neutral-500/5 w-full justify-start rounded"
+                >
+                  <img src="/notion.svg" alt="gmail" class="size-6" />
+                  <span>Notion Mail</span>
+                </IconButtonWithText>
+              </a>
+            </div>
+          </div>
+        </HoverLink>
+        <a href={locationLink} target="_blank" title="Location">
+          <IconButton class="hover:text-blue-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-map-pin-icon lucide-map-pin"
+              ><path
+                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+              ></path><circle cx="12" cy="10" r="3"></circle></svg
+            >
+          </IconButton>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 h-full">
+    <InfoCard
+      image="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*zh5mfindNFjbBsQgICMolA.png"
+      avtar="https://miro.medium.com/v2/resize:fit:113/1*RgtQU67yiCiBwoTLoW-zZg.png"
+      name="Jane Doe"
+      title="Senior Web Developer"
+      description="Experienced developer with a strong background in scalable, production-ready solutions utilizing modern frameworks and technologies."
+    >
+      <div class="flex items-center gap-4 justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-sm text-neutral-500">6d ago</span>
+          <IconButton class="border rounded-full border-neutral-500/10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-heart-plus-icon lucide-heart-plus"
+              ><path
+                d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"
+              ></path><path d="M15 15h6"></path><path d="M18 12v6"></path></svg
+            >
+          </IconButton>
+          <IconButton class="border rounded-full border-neutral-500/10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-message-circle-icon lucide-message-circle"
+              ><path
+                d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
+              ></path></svg
+            >
+          </IconButton>
+        </div>
+        <div class="flex items-center gap-1">
+          <IconButton>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github-icon lucide-github"
+              ><path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+            >
+          </IconButton>
+          <IconButton class="hover:text-blue-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width='18"'
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-globe-icon lucide-globe"
+              ><circle cx="12" cy="12" r="10"></circle><path
+                d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path
+                d="M2 12h20"></path></svg
+            >
+          </IconButton>
+        </div>
+      </div>
+    </InfoCard>
+    <InfoCard
+      image="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*RP36-f33QxlTP4q2X-4wKQ.png"
+      avtar="https://miro.medium.com/v2/resize:fill:60:60/1*41-c96FhtKnOsntes5_iZQ.jpeg"
+      name="Sam Liberty"
+      title="I Tried Using an AI Cofounder to Help Build My App. Here's What I Learned."
+      description="I went through an MIT startup incubator back in the day. I know what it's like to have a cofounder: the late nights debating product direction, the uncomfortable conversations about whether your idea is actually good, the moments when someone you trust tells you that the thing you,re excited about has a fatal flaw."
+    >
+      <div class="flex items-center gap-4 justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-sm text-neutral-500">6d ago</span>
+          <IconButton class="border rounded-full border-neutral-500/10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-heart-plus-icon lucide-heart-plus"
+              ><path
+                d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"
+              ></path><path d="M15 15h6"></path><path d="M18 12v6"></path></svg
+            >
+          </IconButton>
+          <IconButton class="border rounded-full border-neutral-500/10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-message-circle-icon lucide-message-circle"
+              ><path
+                d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
+              ></path></svg
+            >
+          </IconButton>
+        </div>
+        <div class="flex items-center gap-1">
+          <IconButton>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-github-icon lucide-github"
+              ><path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
+            >
+          </IconButton>
+          <IconButton class="hover:text-blue-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width='18"'
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-globe-icon lucide-globe"
+              ><circle cx="12" cy="12" r="10"></circle><path
+                d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path
+                d="M2 12h20"></path></svg
+            >
+          </IconButton>
+        </div>
+      </div>
+    </InfoCard>
+  </div>
+</header>

@@ -1,0 +1,56 @@
+---
+import Avtar from "./Avtar.astro";
+import HoverLink from "./HoverLink.astro";
+
+const {
+  image = "",
+  avtar = "",
+  name = "",
+  title = "",
+  description = "",
+} = Astro.props;
+---
+
+<div class="flex flex-col gap-8 h-full w-full">
+  <div class="flex flex-col gap-6">
+    {
+      image && (
+        <div class="w-full aspect-video overflow-hidden">
+          <img class="w-full h-full object-cover" src={image} alt={title} />
+        </div>
+      )
+    }
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-2 text-sm">
+        {
+          avtar && (
+            <Avtar src={avtar} alt={name ?? title ?? "avatar"} size={24} />
+          )
+        }
+        {
+          name && (
+            <HoverLink
+              text={name}
+              class="font-medium text-neutral-700 hover:text-neutral-900"
+            >
+              hello
+            </HoverLink>
+          )
+        }
+      </div>
+      <div class="flex flex-col">
+        <h2
+          class="text-xl font-archivo tracking-tight text-neutral-800 line-clamp-2"
+        >
+          {title}
+        </h2>
+        <p class="text-neutral-500 line-clamp-2">
+          {description}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-auto">
+    <slot />
+  </div>
+</div>
