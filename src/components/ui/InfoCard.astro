@@ -1,5 +1,5 @@
 ---
-import Avtar from "./Avtar.astro";
+import Avatar from "./Avatar.astro";
 import HoverLink from "./HoverLink.astro";
 
 const {
@@ -15,8 +15,8 @@ const {
   <div class="flex flex-col gap-6">
     {
       image && (
-        <div class="w-full aspect-video overflow-hidden">
-          <img class="w-full h-full object-cover" src={image} alt={title} />
+        <div class="w-full aspect-video overflow-hidden bg-neutral-50 border border-neutral-500/10">
+          <img class="w-full h-full object-contain" src={image} alt={title} />
         </div>
       )
     }
@@ -24,27 +24,18 @@ const {
       <div class="flex items-center gap-2 text-sm">
         {
           avtar && (
-            <Avtar src={avtar} alt={name ?? title ?? "avatar"} size={24} />
+            <Avatar src={avtar} alt={name ?? title ?? "avatar"} size={24} />
           )
         }
-        {
-          name && (
-            <HoverLink
-              text={name}
-              class="font-medium text-neutral-700 hover:text-neutral-900"
-            >
-              hello
-            </HoverLink>
-          )
-        }
+        {name && <h3 class="text-neutral-700">{name}</h3>}
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col gap-1">
         <h2
-          class="text-xl font-archivo tracking-tight text-neutral-800 line-clamp-2"
+          class="text-xl leading-6 font-tilt font-medium tracking-tight text-neutral-800 line-clamp-2"
         >
           {title}
         </h2>
-        <p class="text-neutral-500 line-clamp-2">
+        <p class="text-neutral-500 leading-5 line-clamp-2">
           {description}
         </p>
       </div>

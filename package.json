@@ -9,11 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/archivo-black": "^5.2.8",
-    "@fontsource/bowlby-one-sc": "^5.2.8",
-    "@fontsource/dm-sans": "^5.2.8",
-    "@fontsource/inter": "^5.2.8",
+    "@astrojs/mdx": "^4.3.13",
+    "@fontsource/balsamiq-sans": "^5.2.8",
     "@fontsource/lexend": "^5.2.11",
+    "@fontsource/tilt-warp": "^5.2.11",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
     "tailwindcss": "^4.1.18"

@@ -1,0 +1,35 @@
+---
+import { getEntryBySlug } from "astro:content";
+import "../index.css";
+import Layout from "../layouts/Layout.astro";
+import IconButtonWithText from "../components/ui/IconButtonWithText.astro";
+const about = await getEntryBySlug("about", "about");
+
+if (!about) {
+  throw new Error("About content not found");
+}
+
+const { Content } = await about.render();
+---
+
+<Layout title={about.data.name}>
+  <article class="max-w-3xl mx-auto py-16 prose prose-neutral">
+    <h1>{about.data.name}</h1>
+    <p class="text-neutral-500">{about.data.role}</p>
+    <div class="text-sm text-neutral-500 space-x-4">
+      <span>{about.data.location}</span>
+      <span>{about.data.email}</span>
+      <span>{about.data.phone}</span>
+    </div>
+    <Content />
+    <div class="flex gap-1 mt-4">
+      <a href="/">
+        <IconButtonWithText
+          class="text-xs hover:text-blue-600 border rounded-full border-neutral-500/10 hover:border-neutral-500/50"
+        >
+          Back to Home
+        </IconButtonWithText>
+      </a>
+    </div>
+  </article>
+</Layout>
