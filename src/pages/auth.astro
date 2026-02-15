@@ -18,8 +18,7 @@ import Layout from "../layouts/Layout.astro";
   const BASE_URL = import.meta.env.PUBLIC_AUTH_BACKEND_URL;
 
   const goHome = () => {
-    return null;
-    window.location.href = route.home;
+    return (window.location.href = route.home);
   };
 
   function pushProfileToDOM(profileData: {
