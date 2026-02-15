@@ -1,24 +1,179 @@
 ---
-import LinkButton from "../components/ui/LinkButton.astro";
 import Layout from "../layouts/Layout.astro";
-import { route } from "../const/route-const";
 ---
 
 <Layout>
-  <div class="flex flex-col gap-2">
-    <div>
-      <span class="font-medium font-lexend">Access Code</span>
-      <p id="code" class="break-all text-sm font-mono"></p>
-    </div>
-    <LinkButton path={route.home}> Login done go Back </LinkButton>
+  <div class="flex flex-col gap-4">
+    <div id="profile"></div>
   </div>
 </Layout>
 
 <script>
+  import { route } from "../const/route-const";
+
   const params = new URLSearchParams(window.location.search);
-  const code = params.get("code");
-  if (code) {
-    //@ts-ignore
-    document.getElementById("code").textContent = code;
+  let code = params.get("code");
+  let profile = null;
+  const profileDiv = document.getElementById("profile");
+  const BASE_URL = import.meta.env.PUBLIC_AUTH_BACKEND_URL;
+
+  const goHome = () => {
+    return null;
+    window.location.href = route.home;
+  };
+
+  function pushProfileToDOM(profileData: {
+    name: string;
+    photo: string;
+    email: string;
+    createdAt: string | Date;
+  }) {
+    if (profileDiv && profileData) {
+      profileDiv.innerHTML = ` 
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between gap-6 flex-wrap">
+          <div class="flex items-center gap-4">
+            <img
+              src="${profileData.photo || "fallback-image.png"}"
+              alt="Avatar"
+              loading="lazy"
+              decoding="async"
+              class="object-cover inline-block bg-neutral-50 aspect-square border border-neutral-500/10 rounded-[20px]"
+              style="width: 72px; height: 72px; border-radius: 20px;"
+            />
+            <div class="flex flex-col gap-1">
+              <div class="flex flex-col">
+                <span class="text-sm font-lexend">${profileData.name}</span>
+                <span class="text-sm font-mono">${profileData.email}</span>
+              </div>
+              <span
+                class="text-xs text-neutral-500 flex items-center font-medium"
+              >
+                Joined <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-dot-icon lucide-dot"
+                  ><circle cx="12.1" cy="12.1" r="1"></circle></svg
+                >
+                21 jan 2026
+                <!-- ${new Date(profileData.createdAt).toLocaleDateString(
+                  "en-GB",
+                  {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  },
+                )} -->
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href=${route.home}>
+              <button class="text-neutral-600 smooth cursor-pointer px-4 p-2 text-sm rounded-full flex items-center justify-center border border-neutral-500/20 hover:border-neutral-500/80"> Back Home </button>
+            </a >
+             <a href=${route.home}>
+               <button class="text-blue-600 smooth cursor-pointer px-4 p-2 text-sm rounded-full flex items-center justify-center border border-neutral-500/20 hover:border-neutral-500/80"> Explore More</button>
+             </a >
+          </div>
+        </div>
+          <div class="flex flex-col max-w-lg px-px">
+            <h3 class="text-sm font-lexend">Fluoce Authentication</h3>
+            <p class="text-xs text-neutral-500">
+              Demonstrates the complete authentication process —
+              from authorization code exchange to access token validation and
+              protected profile fetching.
+            </p>
+          </div>
+      </div>
+      `;
+    }
   }
+
+  function pushProfileSkeleton() {
+    if (profileDiv) {
+      profileDiv.innerHTML = `
+        <div class="flex items-center justify-between gap-6 flex-wrap">
+           <div class="flex items-center gap-4 animate-pulse">
+            <div
+              class="bg-neutral-300 rounded-[20px]"
+              style="width:72px; height:72px;"
+            >
+            </div>
+            <div class="flex flex-col gap-3 flex-1">
+              <div class="flex flex-col gap-1">
+                <div class="h-4.5 w-32 bg-neutral-300 rounded-sm"></div>
+                <div class="h-3.5 w-48 bg-neutral-300 rounded-sm"></div>
+              </div>
+              <div class="h-3 w-38 bg-neutral-300 rounded-sm"></div>
+            </div>
+          </div>
+         <div class="flex items-center gap-2">
+            <a href=${route.home}>
+              <button class="text-neutral-600 smooth cursor-pointer px-4 p-2 text-sm rounded-full flex items-center justify-center border border-neutral-500/20 hover:border-neutral-500/80"> Back Home </button>
+            </a >
+             <a href=${route.home}>
+               <button class="text-blue-600 smooth cursor-pointer px-4 p-2 text-sm rounded-full flex items-center justify-center border border-neutral-500/20 hover:border-neutral-500/80"> Explore More</button>
+             </a >
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  const getExchangeData = async () => {
+    pushProfileSkeleton();
+    window.history.replaceState({}, document.title, window.location.pathname);
+    const exchangeRes = await fetch(`${BASE_URL}/exchange`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+    });
+
+    code = null;
+    if (!exchangeRes.ok) {
+      goHome();
+    }
+    const exchangeData = await exchangeRes.json();
+    return exchangeData.data.accessToken;
+  };
+
+  const getProfileData = async (accessToken: string) => {
+    const profileRes = await fetch(`${BASE_URL}/me`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (!profileRes.ok) {
+      goHome();
+    }
+    const profileData = await profileRes.json();
+    return profileData.data;
+  };
+
+  async function authFlow() {
+    if (!code) {
+      goHome();
+    }
+    try {
+      const accessToken = await getExchangeData();
+      if (accessToken) {
+        profile = await getProfileData(accessToken);
+        if (profile) {
+          pushProfileToDOM(profile);
+        }
+      }
+    } catch (error) {
+      goHome();
+    }
+  }
+
+  authFlow();
 </script>

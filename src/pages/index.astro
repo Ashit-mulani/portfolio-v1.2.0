@@ -2,8 +2,8 @@
 import Hero from "../components/block/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import Featuredprojects from "../components/block/Featuredprojects.astro";
-// import { route } from "../const/route-const";
-// import LinkButton from "../components/ui/LinkButton.astro";
+import { route } from "../const/route-const";
+import LinkButton from "../components/ui/LinkButton.astro";
 import { socialLinks } from "../const/route-const";
 import TextLink from "../components/ui/TextLink.astro";
 ---
@@ -24,8 +24,11 @@ import TextLink from "../components/ui/TextLink.astro";
     </p>
     <div class="flex items-center justify-between">
       <h3 class="font-medium font-lexend">Featured Projects</h3>
-      <!-- <LinkButton path={route.projects}> All projects </LinkButton> -->
+      <LinkButton path={route.projects}> All projects </LinkButton>
     </div>
     <Featuredprojects />
+    <div class="flex items-center justify-between">
+      <h3 class="font-medium font-lexend">Tech Satck</h3>
+    </div>
   </div>
 </Layout>
