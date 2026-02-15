@@ -129,6 +129,7 @@ import Layout from "../layouts/Layout.astro";
   const getExchangeData = async () => {
     pushProfileSkeleton();
     window.history.replaceState({}, document.title, window.location.pathname);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     const exchangeRes = await fetch(`${BASE_URL}/exchange`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
