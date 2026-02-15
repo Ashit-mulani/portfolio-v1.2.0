@@ -3,7 +3,7 @@ export const contactInfo = {
     phone: '+91 9313194110'
 }
 
-export const gmailComposeLink = 'https://mail.google.com/mail/u/0/#inbox?compose=new'
+export const gmailComposeLink = `https://mail.google.com/mail/u/0/?fs=1&to=${contactInfo.email}&tf=cm`
 
 export const outlookLink = 'https://outlook.live.com/mail/'
 

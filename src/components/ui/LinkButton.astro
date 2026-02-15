@@ -1,0 +1,13 @@
+---
+import IconButtonWithText from "./IconButtonWithText.astro";
+
+const { path = "#", class: className = "" } = Astro.props;
+---
+
+<a href={path}>
+  <IconButtonWithText
+    class={`${className} text-xs hover:text-blue-600 border rounded-full border-neutral-500/10 hover:border-neutral-500/50`}
+  >
+    <slot />
+  </IconButtonWithText>
+</a>

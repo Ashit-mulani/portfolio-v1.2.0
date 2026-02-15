@@ -1,11 +1,11 @@
 ---
 import { projects } from "../../data/project";
 import IconButton from "../ui/IconButton.astro";
-import IconButtonWithText from "../ui/IconButtonWithText.astro";
 import InfoCard from "../ui/InfoCard.astro";
+import LinkButton from "../ui/LinkButton.astro";
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 h-full">
+<section class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
   {
     projects.map((project) => (
       <InfoCard
@@ -18,11 +18,7 @@ import InfoCard from "../ui/InfoCard.astro";
         <div class="flex items-center gap-4 justify-between">
           <div class="flex items-center gap-2">{/* teck stake */}</div>
           <div class="flex items-center gap-1">
-            <a href={project.link.read}>
-              <IconButtonWithText class="text-xs hover:text-blue-600 border rounded-full border-neutral-500/10 hover:border-neutral-500/50">
-                Read More
-              </IconButtonWithText>
-            </a>
+            <LinkButton path={project.link.read}>Read More</LinkButton>
             <a href={project.link.github} target="_blank">
               <IconButton class="hover:text-blue-600 border rounded-full border-neutral-500/10 hover:border-neutral-500/50">
                 <svg
@@ -67,4 +63,4 @@ import InfoCard from "../ui/InfoCard.astro";
       </InfoCard>
     ))
   }
-</div>
+</section>

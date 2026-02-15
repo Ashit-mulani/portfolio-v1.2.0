@@ -1,0 +1,15 @@
+---
+const {
+  link = "#",
+  target = "",
+  class: className = "font-semibold",
+} = Astro.props;
+---
+
+<a
+  href={link}
+  target={target}
+  class={`${className} underline hover:text-blue-600`}
+>
+  <slot />
+</a>
