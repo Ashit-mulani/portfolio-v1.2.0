@@ -6,19 +6,25 @@ import { route } from "../const/route-const";
 import LinkButton from "../components/ui/LinkButton.astro";
 import { socialLinks } from "../const/route-const";
 import TextLink from "../components/ui/TextLink.astro";
+
+import TechStack from "../components/block/TechStack.astro";
 ---
 
 <Layout>
   <div class="flex flex-col gap-8">
     <Hero />
-    <p class="text-sm font-medium font-lexend text-neutral-700">
+    <p class="text-sm
+      font-medium
+      font-lexend
+      text-neutral-700">
       Currently building <TextLink link={socialLinks.fluoce} target="_blank"
-        >Fluoce.com</TextLink
+        >fluoce.com</TextLink
       > — a platform solving real-world workflow challenges. I've shipped <TextLink
+        class="text-blue-600 font-semibold"
         link={socialLinks.authFluoce}>auth.fluoce.com</TextLink
       >
       for scalable authentication and identity management, Cloud-Fluoce for file and
-      asset handling, and I'm now building Form Fluoce to streamline data collection
+      asset handling, and I'm now building Form-Fluoce to streamline data collection
       and workflow automation — all while exploring system scalability, distributed
       architecture, and performance optimization.
     </p>
@@ -28,7 +34,8 @@ import TextLink from "../components/ui/TextLink.astro";
     </div>
     <Featuredprojects />
     <div class="flex items-center justify-between">
-      <h3 class="font-medium font-lexend">Tech Satck</h3>
+      <h3 class="font-medium font-lexend">Tech Stack</h3>
     </div>
+    <TechStack />
   </div>
 </Layout>

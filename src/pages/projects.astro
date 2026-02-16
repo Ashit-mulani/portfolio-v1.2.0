@@ -1,10 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Allprojects from "../components/block/Allprojects.astro";
+import { route } from "../const/route-const";
 ---
 
-<Layout>
-  <div class="flex flex-col gap-4 font-medium">
+<Layout title="My work | Ashit mulani">
+  <div class="flex flex-col gap-12">
+    <div class="flex flex-col gap-2">
+      <div class="items-center grid grid-cols-4">
+        <h1 class="col-span-3 text-3xl font-lexend font-bold text-neutral-700">
+          Explore My Works
+        </h1>
+        <a href={route.home} class="flex justify-end">
+          <button
+            class="text-neutral-600 smooth cursor-pointer px-4 sm:py-1.5 py-1 text-sm rounded-full flex items-center justify-center border border-neutral-500/20 hover:border-neutral-500/80 hover:text-blue-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-left-icon lucide-arrow-left sm:hidden"
+              ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+            >
+            <span class="hidden sm:flex">Back Home</span>
+          </button>
+        </a>
+      </div>
+      <p class="font-lexend text-neutral-600 leading-5 text-sm">
+        This is a showcase of all my work I've done along my learning journey. I
+        believe the best way to learn is by building projects—each of these
+        taught me something new, whether it was solving a real problem or just
+        exploring new tech.
+      </p>
+    </div>
     <Allprojects />
   </div>
 </Layout>

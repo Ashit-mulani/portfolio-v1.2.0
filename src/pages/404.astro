@@ -1,62 +1,66 @@
----
-import Layout from "../layouts/Layout.astro";
----
-
-<Layout title="404 - Page Not Found">
-  <section class="error-section">
-    <div class="error-container">
-      <h1>404</h1>
-      <h2>Page Not Found</h2>
-      <p>The page you're looking for doesn't exist or has been moved.</p>
-      <div class="home-link-container">
-        <a href="/" class="home-link">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.25"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-arrow-left-icon lucide-arrow-left"
-          >
-            <path d="m12 19-7-7 7-7"></path>
-            <path d="M19 12H5"></path>
-          </svg>
-          Go Back Home
-        </a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <section class="error-section">
+      <div class="error-container">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <div class="home-link-container">
+          <a href="/" class="home-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-left-icon lucide-arrow-left"
+            >
+              <path d="m12 19-7-7 7-7"></path>
+              <path d="M19 12H5"></path>
+            </svg>
+            Go Back Home
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-</Layout>
+    </section>
 
-<style>
-  .error-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    min-height: 32vh;
-  }
-  .error-container {
-    width: 100%;
-    max-width: 627px;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .home-link-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-  }
+    <style>
+      .error-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        min-height: 32vh;
+      }
+      .error-container {
+        width: 100%;
+        max-width: 627px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .home-link-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
 
-  .home-link {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
-</style>
+      .home-link {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+    </style>
+  </body>
+</html>

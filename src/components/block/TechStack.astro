@@ -1,0 +1,12 @@
+---
+import { techStack } from "../../data/tech-stack";
+import Badge from "../ui/Badge.astro";
+---
+
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+  {
+    techStack.map((tech) => {
+      return <Badge>{tech.name}</Badge>;
+    })
+  }
+</div>

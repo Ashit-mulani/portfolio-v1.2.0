@@ -5,7 +5,7 @@ export const contactInfo = {
 
 export const gmailComposeLink = `https://mail.google.com/mail/u/0/?fs=1&to=${contactInfo.email}&tf=cm`
 
-export const outlookLink = 'https://outlook.live.com/mail/'
+export const outlookLink = `https://outlook.office.com/mail/deeplink/compose?to=${contactInfo.email}`
 
 export const notionLink = 'https://mail.notion.so/inbox'
 

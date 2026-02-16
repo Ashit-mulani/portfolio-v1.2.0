@@ -1,6 +1,5 @@
 ---
 import Avatar from "./Avatar.astro";
-import HoverLink from "./HoverLink.astro";
 
 const {
   image = "",
@@ -16,7 +15,13 @@ const {
     {
       image && (
         <div class="w-full aspect-video overflow-hidden bg-neutral-50 border border-neutral-500/10">
-          <img class="w-full h-full object-contain" src={image} alt={title} />
+          <img
+            class="w-full h-full object-contain"
+            fetchpriority="high"
+            loading="eager"
+            src={image}
+            alt={title}
+          />
         </div>
       )
     }

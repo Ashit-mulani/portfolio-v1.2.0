@@ -16,7 +16,7 @@ export interface ProjectInterface {
     }[]
 }
 
-export const projects: ProjectInterface[] = [
+export const featuredProjects: ProjectInterface[] = [
     {
         id: 'imageBox',
         image: '/project/imagebox.png',
@@ -74,4 +74,8 @@ export const projects: ProjectInterface[] = [
             }
         ]
     },
+]
+
+export const allProjects: ProjectInterface[] = [
+    ...featuredProjects,
 ]
