@@ -7,9 +7,7 @@ export const route = {
     }
 }
 
-const portfolio = "http://localhost:3000"
-
-// "https://me.fluoce.com"
+const portfolio = "https://me.fluoce.com"
 
 const portfolioTwo = 'https://founder.fluoce.com';
 

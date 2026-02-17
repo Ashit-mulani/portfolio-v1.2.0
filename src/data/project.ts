@@ -8,7 +8,7 @@ export interface ProjectInterface {
     link: {
         github: string,
         read: string,
-        live: string
+        live?: string
     }
     techStack: {
         name: string,
@@ -31,16 +31,16 @@ export const featuredProjects: ProjectInterface[] = [
         },
         techStack: [
             {
-                name: 'reactjs',
+                name: 'Reactjs',
             },
             {
-                name: 'expressjs',
+                name: 'Expressjs',
             },
             {
-                name: 'mongodb',
+                name: 'Mongodb',
             },
             {
-                name: 'imagekit.io',
+                name: 'Imagekit.io',
             },
         ]
     },
@@ -58,24 +58,114 @@ export const featuredProjects: ProjectInterface[] = [
         },
         techStack: [
             {
-                name: 'etherjs',
+                name: 'Etherjs',
             },
             {
-                name: 'reactjs',
+                name: 'Reactjs',
             },
             {
-                name: 'moralis.com',
+                name: 'Moralis.com',
             },
             {
                 name: '1inch.com',
             },
             {
-                name: 'expressjs',
+                name: 'Expressjs',
             }
+        ]
+    },
+    {
+        id: 'auth-fluoce',
+        image: '/project/auth-fluoce.png',
+        avtar: '/avatar/auth-fluoce.svg',
+        name: 'Auth Fluoce',
+        title: 'Centralized Authentication Service',
+        description: 'A robust authentication layer built to power multiple applications and microservices. Implemented with NestJS, it offers RS256 JWT access tokens, rotating refresh tokens, multi-device session management, and secure rate limiting. Developed using clean architecture principles with an emphasis on production-readiness.',
+        link: {
+            github: 'https://github.com/fluoce/auth/tree/main/auth',
+            read: '/read/auth-fluoce',
+            live: 'https://auth.fluoce.com/auth'
+        },
+        techStack: [
+            {
+                name: 'Nestjs',
+            },
+            {
+                name: 'Redis',
+            },
+            {
+                name: 'Postgresql',
+            },
+            {
+                name: 'Jwt',
+            },
+            {
+                name: 'Prisma',
+            },
+            {
+                name: 'React',
+            },
         ]
     },
 ]
 
 export const allProjects: ProjectInterface[] = [
     ...featuredProjects,
+    {
+        id: 'cloud-fluoce',
+        image: '/project/cloud-fluoce.png',
+        avtar: '/avatar/auth-fluoce.svg',
+        name: 'Cloud Fluoce',
+        title: 'Cloud Storage & File Management',
+        description: 'Effortlessly store, organize, and share your files in one secure, unified cloud. Designed for simplicity and productivity, Cloud Fluoce ensures your workflow is seamless and your files are always at your fingertips.',
+        link: {
+            github: 'https://github.com/Ashit-mulani/fluoce',
+            read: '/read/cloud-fluoce',
+            live: 'In-Beta'
+        },
+        techStack: [
+            {
+                name: 'Nestjs',
+            },
+            {
+                name: 'Redis',
+            },
+            {
+                name: 'Postgresql',
+            },
+            {
+                name: 'Jwt',
+            },
+            {
+                name: 'Prisma',
+            },
+            {
+                name: 'React',
+            },
+        ]
+    },
+    {
+        id: 'tasky',
+        image: '/project/tasky.png',
+        avtar: '/avatar/tasky.png',
+        name: 'Tasky',
+        title: 'Team & Project Management Platform',
+        description: "A lightweight organization management system enabling teams to collaborate through structured projects, sections, and task. Supports member invitations, team-based access control, and flexible task assignment across projects.",
+        link: {
+            github: 'https://github.com/Ashit-mulani/TaSky.app',
+            read: '/read/tasky',
+            live: 'https://tasky-ten-beta.vercel.app'
+        },
+        techStack: [
+            {
+                name: 'Reactjs',
+            },
+            {
+                name: 'Expressjs',
+            },
+            {
+                name: 'Mongodb',
+            },
+        ]
+    },
 ]

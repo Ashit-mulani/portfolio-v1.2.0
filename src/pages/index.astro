@@ -6,7 +6,6 @@ import { route } from "../const/route-const";
 import LinkButton from "../components/ui/LinkButton.astro";
 import { socialLinks } from "../const/route-const";
 import TextLink from "../components/ui/TextLink.astro";
-
 import TechStack from "../components/block/TechStack.astro";
 ---
 
@@ -14,13 +13,14 @@ import TechStack from "../components/block/TechStack.astro";
   <div class="flex flex-col gap-8">
     <Hero />
     <p class="text-sm
-      font-medium
-      font-lexend
-      text-neutral-700">
-      Currently building <TextLink link={socialLinks.fluoce} target="_blank"
-        >fluoce.com</TextLink
+      font-semibold
+      text-neutral-600">
+      Currently building <TextLink
+        link={socialLinks.fluoce}
+        target="_blank"
+        class="text-[13px] font-lexend">fluoce.com</TextLink
       > — a platform solving real-world workflow challenges. I've shipped <TextLink
-        class="text-blue-600 font-semibold"
+        class="text-blue-600 font-semibold font-lexend text-[13px]"
         link={socialLinks.authFluoce}>auth.fluoce.com</TextLink
       >
       for scalable authentication and identity management, Cloud-Fluoce for file and
