@@ -5,9 +5,13 @@
 }
 
 @utility font-lexend {
-   font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 @utility font-tilt {
-  font-family: 'Tilt Warp', system-ui;
+  font-family: "Tilt Warp", sans-serif;
+}
+
+@utility font-noto {
+  font-family: "Noto Serif Georgian", sans-serif;
 }

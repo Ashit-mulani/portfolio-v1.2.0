@@ -11,4 +11,9 @@ export default defineConfig({
     port: 3000,
   },
   integrations: [mdx()],
+  markdown: {
+    shikiConfig: {
+      theme: 'dark-plus'
+    }
+  }
 });

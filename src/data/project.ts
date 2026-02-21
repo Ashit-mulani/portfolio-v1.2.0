@@ -1,7 +1,7 @@
 export interface ProjectInterface {
     type: "Project" | "Componenet" | "Scripts",
     id: string,
-    image: string,
+    image?: string,
     avtar: string,
     name: string,
     title: string,
@@ -15,13 +15,14 @@ export interface ProjectInterface {
         name: string,
         icon?: HTMLOrSVGElement
     }[],
-    command?: string
+    command?: string;
+    code?: string
 }
 
 export const featuredProjects: ProjectInterface[] = [
     {
         type: "Project",
-        id: 'imageBox',
+        id: 'imagebox',
         image: '/project/imagebox.png',
         avtar: '/avatar/imagebox.jpg',
         name: 'Imagebox',
@@ -178,8 +179,7 @@ export const allProjects: ProjectInterface[] = [
     {
         type: 'Componenet',
         id: 'menu',
-        image: '/project/tasky.png',
-        avtar: '/avatar/tasky.png',
+        avtar: '/avatar/component.png',
         name: 'Menu',
         title: 'Mobile first menu component',
         description: "mobile-friendly navigation menu looks easy, but developers face many frustrating challenges. Common problems include menus not sizing correctly on different devices, broken scrolling, content that gets clipped or hidden, touch areas that are too small or unresponsive, and unpredictable behavior in browsers.",
@@ -201,8 +201,7 @@ export const allProjects: ProjectInterface[] = [
     {
         type: 'Componenet',
         id: 'sidepanel',
-        image: '/project/tasky.png',
-        avtar: '/avatar/tasky.png',
+        avtar: '/avatar/component.png',
         name: 'SidePanel',
         title: 'A flexible side panel component',
         description: "Many React applications require side panels for secondary actions or tools, Integrating side panels in React applications often requires installing large, opinionated UI libraries.",

@@ -30,8 +30,8 @@ import Badge from "../ui/Badge.astro";
                   <IconButton class="hover:text-blue-600 border rounded-full border-neutral-500/10 hover:border-neutral-500/50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -55,8 +55,8 @@ import Badge from "../ui/Badge.astro";
                   <IconButton class="hover:text-blue-600 border rounded-full border-neutral-500/10 hover:border-neutral-500/50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -75,11 +75,6 @@ import Badge from "../ui/Badge.astro";
                 <Badge>{project.link.live}</Badge>
               )}
             </div>
-            {project.command && (
-              <div class=" pl-2 py-1 text-sm font-mono font-medium text-slate-500">
-                {project.command}
-              </div>
-            )}
           </div>
         </AllProjectCard>
       ))

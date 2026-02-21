@@ -12,7 +12,8 @@ const { name, svg } = Astro.props;
       src={svg}
       alt={name}
       class="size-5 transition-transform duration-300 group-hover:scale-110"
-      loading="lazy"
+      loading="eager"
+      fetchpriority="high"
     />
   </div>
   <span

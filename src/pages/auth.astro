@@ -35,8 +35,8 @@ import Layout from "../layouts/Layout.astro";
             <img
               src="${profileData.photo || "fallback-image.png"}"
               alt="Avatar"
-              loading="lazy"
-              decoding="async"
+              fetchpriority="high"
+              loading="eager"
               class="object-cover inline-block bg-neutral-50 aspect-square border border-neutral-500/10 rounded-[20px]"
               style="width: 72px; height: 72px; border-radius: 20px;"
             />

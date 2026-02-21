@@ -12,6 +12,7 @@
     "@astrojs/mdx": "^4.3.13",
     "@fontsource/balsamiq-sans": "^5.2.8",
     "@fontsource/lexend": "^5.2.11",
+    "@fontsource/noto-serif-georgian": "^5.2.9",
     "@fontsource/tilt-warp": "^5.2.11",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
