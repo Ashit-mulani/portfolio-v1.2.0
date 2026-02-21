@@ -1,4 +1,5 @@
 export interface ProjectInterface {
+    type: "Project" | "Componenet" | "Scripts",
     id: string,
     image: string,
     avtar: string,
@@ -13,11 +14,13 @@ export interface ProjectInterface {
     techStack: {
         name: string,
         icon?: HTMLOrSVGElement
-    }[]
+    }[],
+    command?: string
 }
 
 export const featuredProjects: ProjectInterface[] = [
     {
+        type: "Project",
         id: 'imageBox',
         image: '/project/imagebox.png',
         avtar: '/avatar/imagebox.jpg',
@@ -45,6 +48,7 @@ export const featuredProjects: ProjectInterface[] = [
         ]
     },
     {
+        type: "Project",
         id: 'goldphin',
         image: '/project/goldphin.png',
         avtar: '/avatar/goldphin.png',
@@ -75,6 +79,7 @@ export const featuredProjects: ProjectInterface[] = [
         ]
     },
     {
+        type: "Project",
         id: 'auth-fluoce',
         image: '/project/auth-fluoce.png',
         avtar: '/avatar/auth-fluoce.svg',
@@ -112,9 +117,10 @@ export const featuredProjects: ProjectInterface[] = [
 export const allProjects: ProjectInterface[] = [
     ...featuredProjects,
     {
+        type: "Project",
         id: 'cloud-fluoce',
         image: '/project/cloud-fluoce.png',
-        avtar: '/avatar/auth-fluoce.svg',
+        avtar: '/avatar/cloud-fluoce.svg',
         name: 'Cloud Fluoce',
         title: 'Cloud Storage & File Management',
         description: 'Effortlessly store, organize, and share your files in one secure, unified cloud. Designed for simplicity and productivity, Cloud Fluoce ensures your workflow is seamless and your files are always at your fingertips.',
@@ -145,6 +151,7 @@ export const allProjects: ProjectInterface[] = [
         ]
     },
     {
+        type: "Project",
         id: 'tasky',
         image: '/project/tasky.png',
         avtar: '/avatar/tasky.png',
@@ -168,4 +175,51 @@ export const allProjects: ProjectInterface[] = [
             },
         ]
     },
+    {
+        type: 'Componenet',
+        id: 'menu',
+        image: '/project/tasky.png',
+        avtar: '/avatar/tasky.png',
+        name: 'Menu',
+        title: 'Mobile first menu component',
+        description: "mobile-friendly navigation menu looks easy, but developers face many frustrating challenges. Common problems include menus not sizing correctly on different devices, broken scrolling, content that gets clipped or hidden, touch areas that are too small or unresponsive, and unpredictable behavior in browsers.",
+        link: {
+            github: "https://github.com/Ashit-mulani/menu",
+            read: "/read/menu",
+            live: "https://www.npmjs.com/package/@ajx2/menu"
+        },
+        techStack: [
+            {
+                name: "Tailwindcss"
+            },
+            {
+                name: "React"
+            }
+        ],
+        command: 'npm i @ajx2/menu'
+    },
+    {
+        type: 'Componenet',
+        id: 'sidepanel',
+        image: '/project/tasky.png',
+        avtar: '/avatar/tasky.png',
+        name: 'SidePanel',
+        title: 'A flexible side panel component',
+        description: "Many React applications require side panels for secondary actions or tools, Integrating side panels in React applications often requires installing large, opinionated UI libraries.",
+        link: {
+            github: "https://github.com/Ashit-mulani/sidepanel",
+            read: "/read/sidepanel",
+            live: "https://www.npmjs.com/package/@ajx2/sidepanel"
+        },
+        techStack: [
+            {
+                name: "Tailwindcss"
+            },
+            {
+                name: "React"
+            }
+        ],
+        command: 'npm i @ajx2/side-panel'
+    }
 ]
+

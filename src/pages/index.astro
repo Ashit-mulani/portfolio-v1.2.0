@@ -1,12 +1,12 @@
 ---
 import Hero from "../components/block/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import Featuredprojects from "../components/block/Featuredprojects.astro";
 import { route } from "../const/route-const";
 import LinkButton from "../components/ui/LinkButton.astro";
 import { socialLinks } from "../const/route-const";
 import TextLink from "../components/ui/TextLink.astro";
 import TechStack from "../components/block/TechStack.astro";
+import Featuredworks from "../components/block/Featuredworks.astro";
 ---
 
 <Layout>
@@ -29,10 +29,10 @@ import TechStack from "../components/block/TechStack.astro";
       architecture, and performance optimization.
     </p>
     <div class="flex items-center justify-between">
-      <h3 class="font-medium font-lexend">Featured Projects</h3>
-      <LinkButton path={route.projects}> All projects </LinkButton>
+      <h3 class="font-medium font-lexend">Featured Works</h3>
+      <LinkButton path={route.projects}> All Works </LinkButton>
     </div>
-    <Featuredprojects />
+    <Featuredworks />
     <div class="flex items-center justify-between">
       <h3 class="font-medium font-lexend">Tech Stack</h3>
     </div>

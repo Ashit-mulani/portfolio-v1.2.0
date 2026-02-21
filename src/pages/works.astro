@@ -1,0 +1,150 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Allworks from "../components/block/Allworks.astro";
+import { route } from "../const/route-const";
+import Allcomponents from "../components/block/Allcomponents.astro";
+import Allprojects from "../components/block/Allprojects.astro";
+import Allscripts from "../components/block/Allscripts.astro";
+---
+
+<Layout title="My work | Ashit mulani">
+  <div class="flex flex-col gap-12">
+    <div class="flex flex-col gap-2">
+      <div class="items-center grid grid-cols-4">
+        <h1 class="col-span-3 text-3xl font-lexend font-bold text-neutral-700">
+          Explore My Works
+        </h1>
+        <a href={route.home} class="flex justify-end">
+          <div
+            class="text-neutral-600 smooth cursor-pointer px-4 sm:py-1.5 py-1 text-sm rounded-full flex items-center justify-center border border-neutral-500/20 hover:border-neutral-500/80 hover:text-blue-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-left-icon lucide-arrow-left sm:hidden"
+              ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+            >
+            <span class="hidden sm:flex">Back Home</span>
+          </div>
+        </a>
+      </div>
+      <p class="font-lexend text-neutral-600 leading-5 text-sm">
+        This is a showcase of all my work I've done along my learning journey. I
+        believe the best way to learn is by building projects—each of these
+        taught me something new, whether it was solving a real problem or just
+        exploring new tech.
+      </p>
+    </div>
+    <div
+      class="flex items-center gap-8 border-b border-neutral-500/8 text-sm text-neutral-500 font-lexend"
+    >
+      <div id="all" class="pb-3 border-b">
+        <a class="px-1 pb-1" href={route.projects} id="tab-link-all"> All </a>
+      </div>
+      <div id="projects" class="pb-3 border-b">
+        <a
+          class="px-1 pb-1"
+          href={route.projectsTab("projects")}
+          id="tab-link-projects"
+        >
+          Projects
+        </a>
+      </div>
+      <div id="componenets" class="pb-3 border-b">
+        <a
+          class="px-1 pb-1"
+          href={route.projectsTab("componenets")}
+          id="tab-link-componenets"
+        >
+          Componenets
+        </a>
+      </div>
+      <div id="scripts" class="pb-3 border-b">
+        <a
+          class="px-1 pb-1"
+          href={route.projectsTab("scripts")}
+          id="tab-link-scripts"
+        >
+          Scripts
+        </a>
+      </div>
+    </div>
+    <div id="all-content">
+      <Allworks />
+    </div>
+    <div id="projects-content" class="hidden">
+      <Allprojects />
+    </div>
+    <div id="componenets-content" class="hidden">
+      <Allcomponents />
+    </div>
+    <div id="scripts-content" class="hidden">
+      <Allscripts />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function getCurrentTabFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("tab") || "all";
+  }
+  function updateTabStyles(tabToActivate: string) {
+    const tabs = ["all", "projects", "componenets", "scripts"];
+
+    tabs.forEach((tab) => {
+      const el = document.getElementById(tab);
+      const contentEl = document.getElementById(`${tab}-content`);
+
+      if (el) {
+        el.classList.remove("border-black", "text-black", "border-transparent");
+        if (tab === tabToActivate) {
+          el.classList.add("border-black", "text-black");
+        } else {
+          el.classList.add("border-transparent");
+        }
+      }
+
+      if (contentEl) {
+        contentEl.classList.toggle("hidden", tab !== tabToActivate);
+      }
+    });
+  }
+
+  function handleTabClick(event: MouseEvent, tab: string) {
+    event.preventDefault();
+    if (tab === "all") {
+      window.history.pushState({}, "", window.location.pathname);
+    } else {
+      window.history.pushState({}, "", `?tab=${tab}`);
+    }
+    updateTabStyles(tab);
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    [
+      { linkId: "tab-link-all", tab: "all" },
+      { linkId: "tab-link-projects", tab: "projects" },
+      { linkId: "tab-link-componenets", tab: "componenets" },
+      { linkId: "tab-link-scripts", tab: "scripts" },
+    ].forEach(({ linkId, tab }) => {
+      const link = document.getElementById(linkId);
+      if (link) {
+        link.addEventListener("click", function (e) {
+          handleTabClick(e, tab);
+        });
+      }
+    });
+    updateTabStyles(getCurrentTabFromURL());
+    window.addEventListener("popstate", () => {
+      updateTabStyles(getCurrentTabFromURL());
+    });
+  });
+</script>

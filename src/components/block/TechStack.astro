@@ -6,7 +6,7 @@ import { techStack } from "../../data/tech-stack";
   {
     techStack.map((tech) => {
       return (
-        <span class="flex items-center gap-2 text-xs">
+        <span class="flex items-center gap-2 text-sm font-mono font-medium">
           {tech.svg && <img src={tech.svg} class="size-4" />}
           {tech.name}
         </span>

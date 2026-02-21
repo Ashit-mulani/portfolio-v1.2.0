@@ -7,8 +7,8 @@ import Badge from "../ui/Badge.astro";
 
 <section class="grid grid-cols-1 gap-8 h-full">
   {
-    allProjects
-      .filter((project) => project.type === "Project")
+    [...allProjects]
+      .sort(() => Math.random() - 0.5)
       .map((project) => (
         <AllProjectCard
           image={project.image}

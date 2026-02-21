@@ -1,13 +1,17 @@
 export const route = {
     home: '/',
     about: '/about',
-    projects: '/projects',
+    projects: '/works',
     read: (slug: string) => {
         return `/read/${slug}`
+    },
+    projectsTab: (tab: "projects" | "componenets" | "scripts") => {
+        return `/works?tab=${tab}`
     }
 }
 
-const portfolio = "https://me.fluoce.com"
+const portfolio = "http://localhost:3000"
+// https://me.fluoce.com
 
 const portfolioTwo = 'https://founder.fluoce.com';
 
