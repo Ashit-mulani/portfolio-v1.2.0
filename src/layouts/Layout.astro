@@ -4,6 +4,7 @@ import "@fontsource/tilt-warp";
 import "@fontsource/noto-serif-georgian";
 import { ViewTransitions } from "astro:transitions";
 import "../index.css";
+import Footer from "../components/block/Footer.astro";
 const {
   title = "Ashit Mulani | Full Stack Web Developer | Portfolio | AJ ",
   description = "Full Stack Developer building scalable web applications with modern technologies.",
@@ -40,6 +41,11 @@ const {
         <slot />
       </div>
     </main>
+    <footer class="flex w-full justify-center items-end">
+      <div class="w-full max-w-2xl">
+        <Footer />
+      </div>
+    </footer>
   </body>
 </html>
 
@@ -50,5 +56,8 @@ const {
     padding: 0px;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>

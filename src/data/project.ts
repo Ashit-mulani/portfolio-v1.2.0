@@ -113,6 +113,31 @@ export const featuredProjects: ProjectInterface[] = [
             },
         ]
     },
+    {
+        type: "Project",
+        id: 'tasky',
+        image: '/project/tasky.png',
+        avtar: '/avatar/tasky.png',
+        name: 'Tasky',
+        title: 'Team & Project Management Platform',
+        description: "A lightweight organization management system enabling teams to collaborate through structured projects, sections, and task. Supports member invitations, team-based access control, and flexible task assignment across projects.",
+        link: {
+            github: 'https://github.com/Ashit-mulani/TaSky.app',
+            read: '/read/tasky',
+            live: 'https://tasky-ten-beta.vercel.app'
+        },
+        techStack: [
+            {
+                name: 'Reactjs',
+            },
+            {
+                name: 'Expressjs',
+            },
+            {
+                name: 'Mongodb',
+            },
+        ]
+    },
 ]
 
 export const allProjects: ProjectInterface[] = [
@@ -148,31 +173,6 @@ export const allProjects: ProjectInterface[] = [
             },
             {
                 name: 'React',
-            },
-        ]
-    },
-    {
-        type: "Project",
-        id: 'tasky',
-        image: '/project/tasky.png',
-        avtar: '/avatar/tasky.png',
-        name: 'Tasky',
-        title: 'Team & Project Management Platform',
-        description: "A lightweight organization management system enabling teams to collaborate through structured projects, sections, and task. Supports member invitations, team-based access control, and flexible task assignment across projects.",
-        link: {
-            github: 'https://github.com/Ashit-mulani/TaSky.app',
-            read: '/read/tasky',
-            live: 'https://tasky-ten-beta.vercel.app'
-        },
-        techStack: [
-            {
-                name: 'Reactjs',
-            },
-            {
-                name: 'Expressjs',
-            },
-            {
-                name: 'Mongodb',
             },
         ]
     },

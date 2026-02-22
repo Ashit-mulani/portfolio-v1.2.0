@@ -13,16 +13,16 @@ import IconButtonWithText from "../ui/IconButtonWithText.astro";
   project && (
     <div class="flex flex-col gap-8">
       <div class="flex flex-col gap-6">
-        <div class="flex flex-col gap-2">
-          <h1 class="text-[34px] sm:text-[42px] leading-8 tracking-tight font-tilt text-neutral-800">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-[36px] sm:text-[42px] leading-9 tracking-tight font-tilt text-neutral-800">
             {project.title}
           </h1>
-          <p class="text-base font-lexend leading-5 font-medium text-neutral-500 ">
+          <p class="text-base sm:text-lg font-lexend leading-6 font-medium text-neutral-500 ">
             {project.description}
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <Avatar src={project.avtar} size={28} />
+          <Avatar src={project.avtar} size={26} />
           <span>{project.name}</span>
         </div>
         <div class="flex flex-wrap items-center justify-between border-y gap-2  border-neutral-500/8 py-2">

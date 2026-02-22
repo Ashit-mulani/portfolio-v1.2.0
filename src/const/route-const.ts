@@ -5,13 +5,12 @@ export const route = {
     read: (slug: string) => {
         return `/read/${slug}`
     },
-    projectsTab: (tab: "projects" | "componenets" | "scripts") => {
+    projectsTab: (tab: "projects" | "componenets" | "scripts" | string) => {
         return `/works?tab=${tab}`
     }
 }
 
-const portfolio = "http://localhost:3000"
-// https://me.fluoce.com
+const portfolio = "https://me.fluoce.com"
 
 const portfolioTwo = 'https://founder.fluoce.com';
 
@@ -21,4 +20,7 @@ export const socialLinks = {
     fluoce: 'https://fluoce.com',
     authFluoce: `https://auth.fluoce.com/auth?ref=${portfolio}&path=${portfolio}`,
     github: 'https://github.com/Ashit-mulani',
+    peerlist: "https://peerlist.io/mulaniashit",
+    medium: "https://medium.com/@mulaniashit",
+    astro: "https://astro.build"
 }

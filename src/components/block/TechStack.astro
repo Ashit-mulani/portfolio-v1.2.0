@@ -2,11 +2,11 @@
 import { techStack } from "../../data/tech-stack";
 ---
 
-<div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
   {
     techStack.map((tech) => {
       return (
-        <span class="flex items-center gap-2 text-sm font-mono font-medium">
+        <span class="flex items-center gap-2 font-lexend text-sm text-neutral-800 font-medium">
           {tech.svg && <img src={tech.svg} class="size-4" />}
           {tech.name}
         </span>

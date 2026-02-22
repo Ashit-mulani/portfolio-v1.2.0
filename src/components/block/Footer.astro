@@ -1,0 +1,158 @@
+---
+import IconButton from "../ui/IconButton.astro";
+import MyAvtar from "../ui/MyAvtar.astro";
+import { socialLinks, route } from "../../const/route-const";
+import { allProjects } from "../../data/project";
+---
+
+<div class="flex flex-col gap-8 p-4 bg-neutral-500/4 mt-8 text-sm font-lexend">
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-5">
+    <div class="col-span-2 flex flex-col gap-4">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <MyAvtar /> Ashit Mulani
+        </div>
+        <p class="text-neutral-500 text-xs max-w-60">
+          Full-Stack Developer Building Scalable Web Apps
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href={socialLinks.github} target="_blank" class="mt-[3px]">
+          <IconButton class="px-0 py-0">
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g
+                  id="Dribbble-Light-Preview"
+                  transform="translate(-140.000000, -7559.000000)"
+                  fill="#000000"
+                >
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path
+                      d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                      id="github-[#142]"
+                    >
+                    </path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </IconButton>
+        </a>
+        <a href={socialLinks.peerlist} target="_blank">
+          <IconButton class="px-0 py-0">
+            <svg
+              height="25px"
+              viewBox="0 0 841.9 595.3"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M421.4 34.9C217.3 34.9 159 93.2 159 297.3s58.5 262.4 262.4 262.4 262.4-58.3 262.4-262.4c.1-204.1-58.4-262.4-262.4-262.4"
+                    fill="#17a746"></path>
+                  <path
+                    d="M226.9 102.8c-34.3 34.3-49.2 92.8-49.2 194.5s14.9 160.2 49.2 194.5S319.8 541 421.3 541s160.1-14.9 194.4-49.2 49.2-92.8 49.2-194.5-14.9-160.2-49.2-194.5C581.6 68.5 523 53.6 421.4 53.6s-160.2 14.9-194.5 49.2M159 297.3c0-204.1 58.3-262.4 262.4-262.4 204 0 262.4 58.3 262.4 262.4s-58.5 262.4-262.4 262.4S159 501.4 159 297.3"
+                    fill="#219653"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"></path>
+                </g>
+                <g>
+                  <path
+                    d="M412.8 156.7H299.6v318.7h88v-66.6h25.2c71.7 0 130.5-56.1 130.5-126s-58.8-126.1-130.5-126.1m-25.2 166.6v-81.2h25.2c23.8 0 42.5 18.5 42.5 40.6s-18.7 40.6-42.5 40.6z"
+                    fill="#24292e"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"></path>
+                  <path
+                    d="M327.7 147.3h103.8c66.9 0 121.1 52.2 121.1 116.6s-54.2 116.6-121.1 116.6h-34.6v66.6h-69.2zm69.2 166.6h34.6c28.7 0 51.9-22.4 51.9-50s-23.2-50-51.9-50h-34.6z"
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"></path>
+                  <path
+                    d="M318.3 138h113.2c71.8 0 130.5 56 130.5 126s-58.8 126-130.5 126h-25.2v66.6h-88zm18.8 18.7v281.2h50.5v-66.6h44c62.1 0 111.7-48.4 111.7-107.3s-49.7-107.3-111.7-107.3zm50.5 47.9h44c33.5 0 61.3 26.2 61.3 59.4 0 33.1-27.8 59.4-61.3 59.4h-44zm18.7 18.7v81.2h25.2c23.8 0 42.5-18.5 42.5-40.6s-18.7-40.6-42.5-40.6z"
+                    fill="#24292e"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"></path>
+                </g>
+              </g>
+            </svg>
+          </IconButton>
+        </a>
+        <a href={socialLinks.medium} target="_blank">
+          <IconButton class="px-0 py-0">
+            <svg
+              fill="#000000"
+              width="25px"
+              height="25px"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+            >
+              <path
+                d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM768 317.7l-40.8 39.1c-3.6 2.7-5.3 7.1-4.6 11.4v287.7c-.7 4.4 1 8.8 4.6 11.4l40 39.1v8.7H566.4v-8.3l41.3-40.1c4.1-4.1 4.1-5.3 4.1-11.4V422.5l-115 291.6h-15.5L347.5 422.5V618c-1.2 8.2 1.7 16.5 7.5 22.4l53.8 65.1v8.7H256v-8.7l53.8-65.1a26.1 26.1 0 0 0 7-22.4V392c.7-6.3-1.7-12.4-6.5-16.7l-47.8-57.6V309H411l114.6 251.5 100.9-251.3H768v8.5z"
+              ></path>
+            </svg>
+          </IconButton>
+        </a>
+      </div>
+    </div>
+    <div class="col-span-3 grid grid-cols-2">
+      <div class="flex flex-col gap-4">
+        <h4>Works</h4>
+        <ul class="flex flex-col items-start gap-2 text-neutral-500">
+          {
+            ["all", "projects", "componenets", "scripts"].map((menu) => (
+              <a
+                href={menu == "all" ? route.projects : route.projectsTab(menu)}
+                class="hover:text-blue-600 hover:underline"
+              >
+                <li class="text-xs capitalize line-clamp-1">{menu}</li>
+              </a>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4>Read</h4>
+        <ul class="flex flex-col items-start gap-2 text-neutral-500">
+          {
+            allProjects.map((project) => {
+              return (
+                <a
+                  href={project.link.read}
+                  class="hover:text-blue-600 hover:underline"
+                >
+                  <li class="text-xs capitalize line-clamp-1">
+                    {project.name}
+                  </li>
+                </a>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <small class="text-neutral-500">
+    © {new Date().getFullYear()} Ashit Mulani. Built with
+    <a
+      href={socialLinks.astro}
+      target="_blank"
+      class="underline hover:text-blue-600"
+    >
+      Astro.
+    </a>
+  </small>
+</div>
