@@ -17,6 +17,7 @@ export interface ProjectInterface {
     }[],
     command?: string;
     code?: string
+    audioSrc?: string
 }
 
 export const featuredProjects: ProjectInterface[] = [
@@ -46,7 +47,8 @@ export const featuredProjects: ProjectInterface[] = [
             {
                 name: 'Imagekit.io',
             },
-        ]
+        ],
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     },
     {
         type: "Project",
@@ -77,7 +79,8 @@ export const featuredProjects: ProjectInterface[] = [
             {
                 name: 'Expressjs',
             }
-        ]
+        ],
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     },
     {
         type: "Project",
@@ -111,7 +114,8 @@ export const featuredProjects: ProjectInterface[] = [
             {
                 name: 'React',
             },
-        ]
+        ],
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     },
     {
         type: "Project",
@@ -136,7 +140,8 @@ export const featuredProjects: ProjectInterface[] = [
             {
                 name: 'Mongodb',
             },
-        ]
+        ],
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     },
 ]
 
@@ -174,7 +179,8 @@ export const allProjects: ProjectInterface[] = [
             {
                 name: 'React',
             },
-        ]
+        ],
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     },
     {
         type: 'Componenet',
@@ -196,7 +202,8 @@ export const allProjects: ProjectInterface[] = [
                 name: "React"
             }
         ],
-        command: 'npm i @ajx2/menu'
+        command: 'npm i @ajx2/menu',
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     },
     {
         type: 'Componenet',
@@ -218,7 +225,8 @@ export const allProjects: ProjectInterface[] = [
                 name: "React"
             }
         ],
-        command: 'npm i @ajx2/side-panel'
+        command: 'npm i @ajx2/side-panel',
+        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
     }
 ]
 
