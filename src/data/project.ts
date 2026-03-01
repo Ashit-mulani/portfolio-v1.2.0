@@ -215,7 +215,7 @@ export const allProjects: ProjectInterface[] = [
         link: {
             github: "https://github.com/Ashit-mulani/sidepanel",
             read: "/read/sidepanel",
-            live: "https://www.npmjs.com/package/@ajx2/sidepanel"
+            live: "https://www.npmjs.com/package/@ajx2/side-panel"
         },
         techStack: [
             {
