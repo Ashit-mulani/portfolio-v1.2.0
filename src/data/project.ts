@@ -93,7 +93,7 @@ export const featuredProjects: ProjectInterface[] = [
         link: {
             github: 'https://github.com/fluoce/auth/tree/main/auth',
             read: '/read/auth-fluoce',
-            live: 'https://auth.fluoce.com/auth'
+            live: 'https://auth.fluoce.com/auth?ref=https://me.fluoce.com&path=https://me.fluoce.com'
         },
         techStack: [
             {
