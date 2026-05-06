@@ -1,232 +1,281 @@
 export interface ProjectInterface {
-    type: "Project" | "Componenet" | "Scripts",
-    id: string,
-    image?: string,
-    avtar: string,
-    name: string,
-    title: string,
-    description: string,
-    link: {
-        github: string,
-        read: string,
-        live?: string
-    }
-    techStack: {
-        name: string,
-        icon?: HTMLOrSVGElement
-    }[],
-    command?: string;
-    code?: string
-    audioSrc?: string
+  type: "Project" | "Componenet" | "Scripts";
+  id: string;
+  image?: string;
+  avtar: string;
+  name: string;
+  title: string;
+  description: string;
+  link: {
+    github: string;
+    read: string;
+    live?: string;
+  };
+  techStack: {
+    name: string;
+    icon?: HTMLOrSVGElement;
+  }[];
+  command?: string;
+  code?: string;
+  audioSrc?: string;
 }
 
 export const featuredProjects: ProjectInterface[] = [
-    {
-        type: "Project",
-        id: 'imagebox',
-        image: '/project/imagebox.png',
-        avtar: '/avatar/imagebox.jpg',
-        name: 'Imagebox',
-        title: 'Seamless Cloud Photo Organizer',
-        description: 'A cloud-based photo management app that lets users easily upload, organize, and share images online.',
-        link: {
-            github: 'https://github.com/Ashit-mulani/imagebox',
-            read: '/read/imagebox',
-            live: 'https://imagebox.fluoce.com/user/home'
-        },
-        techStack: [
-            {
-                name: 'Reactjs',
-            },
-            {
-                name: 'Expressjs',
-            },
-            {
-                name: 'Mongodb',
-            },
-            {
-                name: 'Imagekit.io',
-            },
-        ],
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
+  {
+    type: "Project",
+    id: "imagebox",
+    image: "/project/imagebox.png",
+    avtar: "/avatar/imagebox.jpg",
+    name: "Imagebox",
+    title: "Seamless Cloud Photo Organizer",
+    description:
+      "A cloud-based photo management app that lets users easily upload, organize, and share images online.",
+    link: {
+      github: "https://github.com/Ashit-mulani/imagebox",
+      read: "/read/imagebox",
+      live: "https://imagebox.fluoce.com/user/home",
     },
-    {
-        type: "Project",
-        id: 'goldphin',
-        image: '/project/goldphin.png',
-        avtar: '/avatar/goldphin.png',
-        name: 'Goldphine',
-        title: 'Dashboard for Crypto Wallets',
-        description: 'Connect your crypto wallet and view all your wallet stats in one place. Includes a built-in token swap service that lets you seamlessly exchange tokens across multiple blockchains.',
-        link: {
-            github: 'https://github.com/Ashit-mulani/GoldPhin.io',
-            read: '/read/goldphin',
-            live: 'https://goldphin.fluoce.com'
-        },
-        techStack: [
-            {
-                name: 'Etherjs',
-            },
-            {
-                name: 'Reactjs',
-            },
-            {
-                name: 'Moralis.com',
-            },
-            {
-                name: '1inch.com',
-            },
-            {
-                name: 'Expressjs',
-            }
-        ],
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
+    techStack: [
+      {
+        name: "Reactjs",
+      },
+      {
+        name: "Expressjs",
+      },
+      {
+        name: "Mongodb",
+      },
+      {
+        name: "Imagekit.io",
+      },
+    ],
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+  {
+    type: "Project",
+    id: "goldphin",
+    image: "/project/goldphin.png",
+    avtar: "/avatar/goldphin.png",
+    name: "Goldphine",
+    title: "Dashboard for Crypto Wallets",
+    description:
+      "Connect your crypto wallet and view all your wallet stats in one place. Includes a built-in token swap service that lets you seamlessly exchange tokens across multiple blockchains.",
+    link: {
+      github: "https://github.com/Ashit-mulani/GoldPhin.io",
+      read: "/read/goldphin",
+      live: "https://goldphin.fluoce.com",
     },
-    {
-        type: "Project",
-        id: 'auth-fluoce',
-        image: '/project/auth-fluoce.png',
-        avtar: '/avatar/auth-fluoce.svg',
-        name: 'Auth Fluoce',
-        title: 'Centralized Authentication Service',
-        description: 'A robust authentication layer built to power multiple applications and microservices. Implemented with NestJS, it offers RS256 JWT access tokens, rotating refresh tokens, multi-device session management, and secure rate limiting. Developed using clean architecture principles with an emphasis on production-readiness.',
-        link: {
-            github: 'https://github.com/fluoce/auth/tree/main/auth',
-            read: '/read/auth-fluoce',
-            live: 'https://auth.fluoce.com/auth?ref=https://me.fluoce.com&path=https://me.fluoce.com'
-        },
-        techStack: [
-            {
-                name: 'Nestjs',
-            },
-            {
-                name: 'Redis',
-            },
-            {
-                name: 'Postgresql',
-            },
-            {
-                name: 'Jwt',
-            },
-            {
-                name: 'Prisma',
-            },
-            {
-                name: 'React',
-            },
-        ],
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
+    techStack: [
+      {
+        name: "Etherjs",
+      },
+      {
+        name: "Reactjs",
+      },
+      {
+        name: "Moralis.com",
+      },
+      {
+        name: "1inch.com",
+      },
+      {
+        name: "Expressjs",
+      },
+    ],
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+  {
+    type: "Project",
+    id: "auth-fluoce",
+    image: "/project/auth-fluoce.png",
+    avtar: "/avatar/auth-fluoce.svg",
+    name: "Auth Fluoce",
+    title: "Centralized Authentication Service",
+    description:
+      "A robust authentication layer built to power multiple applications and microservices. Implemented with NestJS, it offers RS256 JWT access tokens, rotating refresh tokens, multi-device session management, and secure rate limiting. Developed using clean architecture principles with an emphasis on production-readiness.",
+    link: {
+      github: "https://github.com/fluoce/auth/tree/main/auth",
+      read: "/read/auth-fluoce",
+      live: "https://auth.fluoce.com/auth?ref=https://me.fluoce.com&path=https://me.fluoce.com",
     },
-    {
-        type: "Project",
-        id: 'tasky',
-        image: '/project/tasky.png',
-        avtar: '/avatar/tasky.png',
-        name: 'Tasky',
-        title: 'Team & Project Management Platform',
-        description: "A lightweight organization management system enabling teams to collaborate through structured projects, sections, and task. Supports member invitations, team-based access control, and flexible task assignment across projects.",
-        link: {
-            github: 'https://github.com/Ashit-mulani/TaSky.app',
-            read: '/read/tasky',
-            live: 'https://tasky-ten-beta.vercel.app'
-        },
-        techStack: [
-            {
-                name: 'Reactjs',
-            },
-            {
-                name: 'Expressjs',
-            },
-            {
-                name: 'Mongodb',
-            },
-        ],
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
+    techStack: [
+      {
+        name: "Nestjs",
+      },
+      {
+        name: "Redis",
+      },
+      {
+        name: "Postgresql",
+      },
+      {
+        name: "Jwt",
+      },
+      {
+        name: "Prisma",
+      },
+      {
+        name: "React",
+      },
+    ],
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+  {
+    type: "Project",
+    id: "form-fluoce",
+    image: "/project/form-fluoce.png",
+    avtar: "/avatar/form-fluoce.svg",
+    name: "Form Fluoce",
+    title: "Simple Form Creation & Data Collection",
+    description:
+      "An intuitive form builder platform enabling users to effortlessly create, customize, and manage forms through a user-friendly drag-and-drop interface. Optimized for rapid data collection, Easily share forms with links and embedding.",
+
+    link: {
+      github: "https://github.com/fluoce/form",
+      read: "/read/form-fluoce",
+      live: "https://form.fluoce.com/dashboard",
     },
-]
+    techStack: [
+      {
+        name: "Nestjs",
+      },
+      {
+        name: "Auth-fluoce",
+      },
+
+      {
+        name: "Postgresql",
+      },
+      {
+        name: "Nextjs",
+      },
+      {
+        name: "Redis",
+      },
+    ],
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+];
 
 export const allProjects: ProjectInterface[] = [
-    ...featuredProjects,
-    {
-        type: "Project",
-        id: 'cloud-fluoce',
-        image: '/project/cloud-fluoce.png',
-        avtar: '/avatar/cloud-fluoce.svg',
-        name: 'Cloud Fluoce',
-        title: 'Cloud Storage & File Management',
-        description: 'Effortlessly store, organize, and share your files in one secure, unified cloud. Designed for simplicity and productivity, Cloud Fluoce ensures your workflow is seamless and your files are always at your fingertips.',
-        link: {
-            github: 'https://github.com/Ashit-mulani/fluoce',
-            read: '/read/cloud-fluoce',
-            live: 'In-Beta'
-        },
-        techStack: [
-            {
-                name: 'Nestjs',
-            },
-            {
-                name: 'Redis',
-            },
-            {
-                name: 'Postgresql',
-            },
-            {
-                name: 'Jwt',
-            },
-            {
-                name: 'Prisma',
-            },
-            {
-                name: 'React',
-            },
-        ],
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
+  ...featuredProjects,
+  {
+    type: "Project",
+    id: "tasky",
+    image: "/project/tasky.png",
+    avtar: "/avatar/tasky.png",
+    name: "Tasky",
+    title: "Team & Project Management Platform",
+    description:
+      "A lightweight organization management system enabling teams to collaborate through structured projects, sections, and task. Supports member invitations, team-based access control, and flexible task assignment across projects.",
+    link: {
+      github: "https://github.com/Ashit-mulani/TaSky.app",
+      read: "/read/tasky",
+      live: "https://tasky-ten-beta.vercel.app",
     },
-    {
-        type: 'Componenet',
-        id: 'menu',
-        avtar: '/avatar/component.png',
-        name: 'Menu',
-        title: 'Mobile first menu component',
-        description: "mobile-friendly navigation menu looks easy, but developers face many frustrating challenges. Common problems include menus not sizing correctly on different devices, broken scrolling, content that gets clipped or hidden, touch areas that are too small or unresponsive, and unpredictable behavior in browsers.",
-        link: {
-            github: "https://github.com/Ashit-mulani/menu",
-            read: "/read/menu",
-            live: "https://www.npmjs.com/package/@ajx2/menu"
-        },
-        techStack: [
-            {
-                name: "Tailwindcss"
-            },
-            {
-                name: "React"
-            }
-        ],
-        command: 'npm i @ajx2/menu',
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
+    techStack: [
+      {
+        name: "Reactjs",
+      },
+      {
+        name: "Expressjs",
+      },
+      {
+        name: "Mongodb",
+      },
+    ],
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+  {
+    type: "Project",
+    id: "cloud-fluoce",
+    image: "/project/cloud-fluoce.png",
+    avtar: "/avatar/cloud-fluoce.svg",
+    name: "Cloud Fluoce",
+    title: "Cloud Storage & File Management",
+    description:
+      "Effortlessly store, organize, and share your files in one secure, unified cloud. Designed for simplicity and productivity, Cloud Fluoce ensures your workflow is seamless and your files are always at your fingertips.",
+    link: {
+      github: "https://github.com/Ashit-mulani/fluoce",
+      read: "/read/cloud-fluoce",
+      live: "In-Beta",
     },
-    {
-        type: 'Componenet',
-        id: 'sidepanel',
-        avtar: '/avatar/component.png',
-        name: 'SidePanel',
-        title: 'A flexible side panel component',
-        description: "Many React applications require side panels for secondary actions or tools, Integrating side panels in React applications often requires installing large, opinionated UI libraries.",
-        link: {
-            github: "https://github.com/Ashit-mulani/sidepanel",
-            read: "/read/sidepanel",
-            live: "https://www.npmjs.com/package/@ajx2/side-panel"
-        },
-        techStack: [
-            {
-                name: "Tailwindcss"
-            },
-            {
-                name: "React"
-            }
-        ],
-        command: 'npm i @ajx2/side-panel',
-        audioSrc: 'https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg'
-    }
-]
-
+    techStack: [
+      {
+        name: "Nestjs",
+      },
+      {
+        name: "Redis",
+      },
+      {
+        name: "Postgresql",
+      },
+      {
+        name: "Jwt",
+      },
+      {
+        name: "Prisma",
+      },
+      {
+        name: "React",
+      },
+    ],
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+  {
+    type: "Componenet",
+    id: "menu",
+    avtar: "/avatar/component.png",
+    name: "Menu",
+    title: "Mobile first menu component",
+    description:
+      "mobile-friendly navigation menu looks easy, but developers face many frustrating challenges. Common problems include menus not sizing correctly on different devices, broken scrolling, content that gets clipped or hidden, touch areas that are too small or unresponsive, and unpredictable behavior in browsers.",
+    link: {
+      github: "https://github.com/Ashit-mulani/menu",
+      read: "/read/menu",
+      live: "https://www.npmjs.com/package/@ajx2/menu",
+    },
+    techStack: [
+      {
+        name: "Tailwindcss",
+      },
+      {
+        name: "React",
+      },
+    ],
+    command: "npm i @ajx2/menu",
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+  {
+    type: "Componenet",
+    id: "sidepanel",
+    avtar: "/avatar/component.png",
+    name: "SidePanel",
+    title: "A flexible side panel component",
+    description:
+      "Many React applications require side panels for secondary actions or tools, Integrating side panels in React applications often requires installing large, opinionated UI libraries.",
+    link: {
+      github: "https://github.com/Ashit-mulani/sidepanel",
+      read: "/read/sidepanel",
+      live: "https://www.npmjs.com/package/@ajx2/side-panel",
+    },
+    techStack: [
+      {
+        name: "Tailwindcss",
+      },
+      {
+        name: "React",
+      },
+    ],
+    command: "npm i @ajx2/side-panel",
+    audioSrc:
+      "https://pub-9451e2d759374027984bafb1eb8dcb42.r2.dev/projects-sound/ring.mpeg",
+  },
+];
