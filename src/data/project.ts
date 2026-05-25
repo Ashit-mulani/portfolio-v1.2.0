@@ -136,7 +136,7 @@ export const featuredProjects: ProjectInterface[] = [
     link: {
       github: "https://github.com/fluoce/form",
       read: "/read/form-fluoce",
-      live: "https://form.fluoce.com/dashboard",
+      live: "https://form.fluoce.com",
     },
     techStack: [
       {
